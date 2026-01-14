@@ -1,0 +1,6 @@
+{
+  "network": "sepolia",
+  "nftContract":"0x79526e81f70B5485A97829b41E2CA8eB8E7861eD",
+  "marketplaceContract":"0x14eD89D03a3b23aca04f014954b7680ec602E8ec",
+  "deployedAt": "2025-10-18T15:32:13.987Z"
+}

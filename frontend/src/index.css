@@ -1,0 +1,94 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base styles --- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 font-sans antialiased bg-background text-foreground;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+
+  /* Debug wrapper helper */
+  [data-debug-wrapper="true"] {
+    display: contents !important;
+  }
+  [data-debug-wrapper="true"] > * {
+    margin: inherit;
+    padding: inherit;
+    gap: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    border-color: inherit;
+  }
+}
+
+/* --- CSS Variables for colors and dark mode --- */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+/* --- Utility mappings using Tailwind --- */
+@layer base {
+  /* Backgrounds and text colors mapped to CSS variables */
+  .bg-background { background-color: hsl(var(--background)); }
+  .text-foreground { color: hsl(var(--foreground)); }
+  .bg-card { background-color: hsl(var(--card)); }
+  .text-card-foreground { color: hsl(var(--card-foreground)); }
+  .rounded-radius { border-radius: var(--radius); }
+  .border-border { border-color: hsl(var(--border)); }
+}
+
+/* --- Optional global input and button styling --- */
+@layer base {
+  input, textarea, select {
+    @apply border border-border rounded-radius p-2 bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-ring;
+  }
+
+  button {
+    @apply rounded-radius px-4 py-2 font-medium cursor-pointer transition-colors;
+  }
+
+  a {
+    @apply text-cyan-500 hover:text-cyan-400 transition-colors;
+  }
+}
