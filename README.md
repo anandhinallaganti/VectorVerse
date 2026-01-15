@@ -81,7 +81,7 @@ Ensure the following are installed on your system:
    npx hardhat run scripts/deploy.ts --network localhost
 6. Save the deployed contract address and ABI for frontend integration.
 
---
+---
 
 ### Frontend Setup
 
@@ -98,7 +98,7 @@ Ensure the following are installed on your system:
    ```bash
    http://localhost:5173/
 
---
+---
 
 ## 📌 Usage
 
